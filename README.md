@@ -26,22 +26,19 @@
 <ul>
 <li>Returning Visitor Goals</li>
 <ul>
-<li>As a returning visitor, I would like to be able to choose a different category of words levels.</li>
+<li>As a returning visitor, I would like to choose to play with someone else.</li>
 </ul>
 </ul>
 <ul>
 <li>Frequent User Goals</li>
 <ul>
-<li>As a frequent user, I would like to try to guess little phrases.</li>
+<li>As a frequent user, I would like to try to guess different levels.</li>
 </ul>
 </ul>
 
 <h3>Flow Chart</h3>
 
-<br>
-<p>Flow Chart</p>
-
-![Flowchart](images/flowchart.png)
+![Flowchart](images/flow%20chart.jpg)
 
 <h2>Features</h2>
 
@@ -61,23 +58,25 @@
 <h3>Game Start</h3>
 <ul>
 <li>Simple and visible logo to greet the player and start the game.</li>
+<li>The game starts asking which option to play, alone or with another player.</li>
 </ul>
 
-![index](photo)
+![index](images/Initial.png)
 
 <h3>Letter Capture</h3>
 <ul>
-<li>Captures the letters entered by the player, if the letter is correct it goes to its correct space in the word order, if the letter is wrong the body starts to be inserted into the gallows.</li>
+<li>Captures the letters entered by the player(s), if the letter is correct it goes to its correct space in the word order, if the letter is wrong the body starts to be inserted into the gallows.</li>
+<li>If the game is between two players, after each move is taken in turns players.</li>
 </ul>
 
-![index](photo)
+![index](images/letter.png)
 
 <h3>Final Message</h3>
 <ul>
 <li>Final message with a funny sentence for either end (win or lose)</li>
 </ul>
 
-![index](photo)
+![index](images/Final.png)
 
 <h2>Technologies Used</h2>
 <h3>Languages Used</h3>
@@ -90,7 +89,7 @@
 </li>
 <li> <a href="https://miro.com/" target="_blank" rel=”noopener”>Miro</a>
 <ul>
-<li>Balsamiq was used to create the Flow Chart to facilitate the logic and construction of the game.</li>
+<li>Miro was used to create the Flow Chart to facilitate the logic and construction of the game.</li>
 </ul>
 </li>
 <li> <a href="https://github.com/" target="_blank" rel=”noopener”>GitHub</a>
@@ -103,23 +102,21 @@
 <li>Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.</li>
 </ul>
 </li>
+</li>
+<li> <a href="https://www.heroku.com/" target="_blank" rel=”noopener”>Heroku</a>
+<ul>
+<li>To deploy the project.</li>
+</ul>
+</li>
 </ol>
 
 <h2>Testing</h2>
-<ul>
-<li> <a href="" target="_blank" rel=”noopener”>?????</a></li>
-
-![index](adress/photo)
-<br>
-
-</ul>
-
 <h3>Testing User Stories from User Experience (UX) Section</h3>
 
 <ul>
-<li>As a user, I want to consume content about world history, wars and politics.</li>
+<li>As a user, I want to be able to interact to get the words right.</li>
 <li>As a user, I want a site that is intuitive and easy to navigate.</li>
-<li>As a user, I want it to challenge me to improve my knowledge.</li>
+<li>As a user, I want the site to challenge me to improve my thinking.</li>
 </ul>
 
 <h3>Manual Testing</h3>
@@ -204,21 +201,31 @@
 <ul>
 <li>Designed and thought of by the developer of this project.</li>
 </ul>
+<li><a href = "https://textkool.com/" target = "_blank" rel="noopener">Text Kool</a>
+<ul>
+<li>ASCII text art generator</li>
+</ul>
+</li>
+<li><a href = "https://www.youtube.com/watch?v=JNXmCOumNw0" target = "_blank" rel="noopener">
+CBT Nuggets
+</a>
+<ul>
+<li>Code reference</li>
+</ul>
+</li>
+<li><a href = "https://www.youtube.com/watch?v=wmSysRui0cI" target = "_blank" rel="noopener">
+MJ Codes
+</a>
+<ul>
+<li>Code reference</li>
+</ul>
+</li>
 </ul>
 
 <h3>Content</h3>
 <ul>
 <li>Words thought up at random by the developer of this project.</li>
 </ul>
-
-<h3>Media</h3>
-<ul>
-<li> <a href="" target="_blank" rel=”noopener”>??????</a>
-<ul>
-<li>Description</li>
-</ul>
-</ul>
-
 
 <h2>Acknowledgements</h2>
 <ul>
