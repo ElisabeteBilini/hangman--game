@@ -15,7 +15,8 @@ word_list = [
 
 #choosing random word
 select_word = random.choice(word_list).upper()
-print(select_word)
+#test word
+#print(select_word)
 
 board = []
 blanks = '_'
