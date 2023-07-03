@@ -108,6 +108,11 @@
 <li>To deploy the project.</li>
 </ul>
 </li>
+<li> <a href="https://pep8ci.herokuapp.com/#" target="_blank" rel=”noopener”>CI Python Linter</a>
+<ul>
+<li>To detect coding issues.</li>
+</ul>
+</li>
 </ol>
 
 <h2>Testing</h2>
