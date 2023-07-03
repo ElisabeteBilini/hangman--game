@@ -1,4 +1,5 @@
-# Template exchange, originally written by the link: https://elisabetebilini.github.io/hangman-game/
+# Template exchange, originally written by the link: 
+# https://elisabetebilini.github.io/hangman-game/
 
 from art import body_pieces, hang
 import random
@@ -6,9 +7,10 @@ import random
 print(hang)
 
 word_list = [ 
-    'elephant', 'guitar', 'computer', 'pizza', 'bicycle', 'diamond', 'rainbow',
-    'spider', 'telescope', 'dragon', 'house', 'book', 'bed', 'summer', 'school',
-    'computer', 'park', 'office', 'bodybuilder' 
+    'elephant', 'guitar', 'computer', 'pizza', 'bicycle', 
+    'diamond', 'rainbow', 'spider', 'telescope', 'dragon',
+    'house', 'book', 'bed', 'summer',
+    'school', 'computer', 'park', 'office', 'bodybuilder' 
 ]
 
 #choosing random word
@@ -21,7 +23,7 @@ chances = 6
 game_over = False
 
 for letter in range(len(select_word)):
-        board += blanks
+    board += blanks
 
 choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")
 
@@ -32,7 +34,7 @@ if choice == '1':
 
     while not game_over:
         #identifying player
-        print('Player :' + ''.join(board))
+        print('Secret Word: ' + ''.join(board))
     
         #request letter to player
         letter_player = input("Type one letter: \n").upper()
@@ -50,7 +52,7 @@ if choice == '1':
             if chances == 0:
                 game_over = True
                 print("Beware, words can also kill! You lose.")
-                print(f'{atual_player} lost the game.')
+                print(f'{player}, you lost the game.')
                 break
             print(body_pieces[chances])
 
@@ -66,7 +68,7 @@ else:
 
     while not game_over:
         #identifying player
-        print('Player :' + ''.join(board))
+        print('Secret Word: ' + ''.join(board))
         print(f"{atual_player}'s turn.")
 
         #request letter to player
