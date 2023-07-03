@@ -49,9 +49,10 @@
 <li>Desktop 1600px x 992px</li>
 <li>Laptop 1280px x 802px</li>
 <li>Tablet 768px x 1024px</li>
-<li>Mobile 320px x 480px</li>
 </ul>
 </ul>
+
+![index](images/responsive.png)
 
 <h3>Initial Page</h3>
 

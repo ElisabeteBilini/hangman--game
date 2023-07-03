@@ -45,8 +45,9 @@ if choice == '1':
             CHANCES -= 1
             if CHANCES == 0:
                 GAME_OVER = True
-                print("Beware, words can also kill! You lose.")
+                print("Beware, words can also kill!")
                 print(f'{player}, you lost the game.')
+                print(f'The secret word was: {select_word}.')
                 break
             print(body_pieces[CHANCES])
 
@@ -79,8 +80,9 @@ else:
             CHANCES -= 1
             if CHANCES == 0:
                 GAME_OVER = True
-                print("Beware, words can also kill! You lose.")
+                print("Beware, words can also kill!")
                 print(f'{atual_player} lost the game.')
+                print(f'The secret word was: {select_word}.')
                 break
 
         if BLANKS not in BOARD:
