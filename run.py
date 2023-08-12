@@ -25,7 +25,7 @@ else:
 
 BOARD = []
 BLANKS = '_'
-CHANCES = 6
+CHANCES = 7
 GAME_OVER = False
 
 for letter in range(len(select_word)):
@@ -81,8 +81,7 @@ if choice == '1':
                 print(f'{player}, you lost the game.')
                 print(f'The secret word was: {select_word}.')
                 break
-            print(body_pieces[CHANCES])
-
+            
         if BLANKS not in BOARD:
             GAME_OVER = True
             print("Congratulation, you survive!")
