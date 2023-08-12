@@ -2,6 +2,7 @@
 https://elisabetebilini.github.io/hangman-game/
 '''
 import random
+import re
 from art import body_pieces, hang
 from words import word_list
 
@@ -24,7 +25,12 @@ choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")
 print("Number of letters in the secret word: ", len(select_word))
 
 if choice == '1':
-    player = input("Player, enter your name: \n").upper()
+    while True:
+        player = input("Player, enter your name: \n").upper()
+        if re.match(r'^[A-Z]{3,}$', player):
+            break
+        else:
+            print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
 
 # identifying player
     while not GAME_OVER:
@@ -55,8 +61,20 @@ if choice == '1':
             GAME_OVER = True
             print("Congratulation, you survive!")
 else:
-    player_01 = input("Player 1, enter your name: \n").upper()
-    player_02 = input("Player 2, enter your name: \n").upper()
+    while True:
+        player_01 = input("Player 1, enter your name: \n").upper()
+        if re.match(r'^[A-Z]{3,}$', player_01):
+            break
+        else:
+            print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
+    while True:
+        player_02 = input("Player 2, enter your name: \n").upper()
+        if re.match(r'^[A-Z]{3,}$', player_02):
+            break
+        else:
+            print(
+          "Invalid name. Please enter a name with at least 3 letters and containing only letters."
+      )
 
     atual_player = player_01
 
