@@ -54,14 +54,15 @@ if choice == '1':
             else:
                 print("Invalid input. Please enter a single letter.")
                 CHANCES -= 1
+                print(body_pieces[CHANCES])
+
                 if CHANCES == 0:
                     GAME_OVER = True
                     print("Beware, words can also kill!")
                     print(f'{player}, you lost the game.')
                     print(f'The secret word was: {select_word}.')
                     break
-                print(body_pieces[CHANCES])
-
+                
 # Checking Letter and spaces
         HAS_LETTER = False
         for letter_position in range(len(select_word)):
@@ -72,6 +73,8 @@ if choice == '1':
 
         if not HAS_LETTER:
             CHANCES -= 1
+            print(body_pieces[CHANCES])
+
             if CHANCES == 0:
                 GAME_OVER = True
                 print("Beware, words can also kill!")
@@ -117,6 +120,8 @@ else:
 
         if not HAS_LETTER:
             CHANCES -= 1
+            print(body_pieces[CHANCES])
+            
             if CHANCES == 0:
                 GAME_OVER = True
                 print("Beware, words can also kill!")
