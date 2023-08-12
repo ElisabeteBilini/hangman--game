@@ -4,13 +4,24 @@ https://elisabetebilini.github.io/hangman-game/
 import random
 import re
 from art import body_pieces, hang
-from words import word_list
+from words import word_list_easy, word_list_intermediate, word_list_hard
 
 print(hang)
 
-select_word = random.choice(word_list).upper()
-'''choosing random word
-print(select_word)'''
+select_word = ""
+difficulty = ""
+
+# difficulty level
+while difficulty not in ('1', '2', '3'):
+    difficulty = input(
+      "Choose the difficulty level: \n1 - Easy\n2 - Intermediate\n3 - Hard\n")
+
+if difficulty == '1':
+    select_word = random.choice(word_list_easy).upper()
+elif difficulty == '2':
+    select_word = random.choice(word_list_intermediate).upper()
+else:
+    select_word = random.choice(word_list_hard).upper()
 
 BOARD = []
 BLANKS = '_'
