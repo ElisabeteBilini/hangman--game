@@ -36,8 +36,20 @@ if choice == '1':
     while not GAME_OVER:
         print('Secret Word: ' + ''.join(BOARD))
 
-# request letter to player
-        letter_player = input("Type one letter: \n").upper()
+        while True:
+            letter_player = input("Type one letter: \n").upper()
+            if len(letter_player) == 1 and letter_player.isalpha():
+                break
+            else:
+                print("Invalid input. Please enter a single letter.")
+                CHANCES -= 1
+                if CHANCES == 0:
+                    GAME_OVER = True
+                    print("Beware, words can also kill!")
+                    print(f'{player}, you lost the game.')
+                    print(f'The secret word was: {select_word}.')
+                    break
+                print(body_pieces[CHANCES])
 
 # Checking Letter and spaces
         HAS_LETTER = False
@@ -72,9 +84,7 @@ else:
         if re.match(r'^[A-Z]{3,}$', player_02):
             break
         else:
-            print(
-          "Invalid name. Please enter a name with at least 3 letters and containing only letters."
-      )
+            print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
 
     atual_player = player_01
 
