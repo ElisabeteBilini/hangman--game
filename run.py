@@ -6,7 +6,48 @@ import re
 from art import body_pieces, hang
 from words import word_list_easy, word_list_intermediate, word_list_hard
 
+def display_instructions():
+    print("Instructions for Hangman:")
+    print("The player can choose the difficulty level of the words.")
+    print("The player(s) have a total of 7 chances to discover the word.")
+    print("The player must provide a name with at least 3 letters.")
+    print("The number of letters in the word drawn is displayed.")
+    print("At the end of the game, the secret word is revealed.")
+    print("Press 0 to return to the main menu.")
+
+def display_scores(scores):
+   
+
+player_scores = {
+    'easy': {},
+    'intermediate': {},
+    'hard': {}
+}
+
 print(hang)
+
+while True:
+    print("1 - Instructions")
+    print("2 - Player Scores")
+    print("3 - Start Game")
+    print("4 - Quit")
+    
+    choice = input("Enter your choice: ")
+    
+    if choice == '1':
+        display_instructions()
+        input("Press 0 to return to the main menu.")
+    elif choice == '2':
+        display_scores(player_scores)
+        input("Press 0 to return to the main menu.")
+    elif choice == '3':
+        print("Hangman Game")
+        print(hang)
+    elif choice == '4':
+        print("Thank you for playing Hangman!")
+        break
+    else:
+        print("Invalid choice. Please select a valid option.")
 
 select_word = ""
 difficulty = ""
