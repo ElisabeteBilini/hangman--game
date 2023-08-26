@@ -22,7 +22,7 @@ select_word = ""
 difficulty = ""
 
 while True:
-    print("1 - Instructions")
+    print("\n1 - Instructions")
     print("2 - Player Scores")
     print("3 - Start Game")
     print("4 - Quit")
@@ -47,6 +47,7 @@ while True:
         BLANKS = '_'
         CHANCES = 7
         GAME_OVER = False
+        used_letters = []
 
         for letter in range(len(select_word)):
             BOARD += BLANKS
@@ -66,10 +67,15 @@ while True:
         # identifying player
             while not GAME_OVER:
                 print('Secret Word: ' + ''.join(BOARD))
+                print("Used Letters:", ', '.join(used_letters))
 
                 while True:
                     letter_player = input("Type one letter: \n").upper()
                     if len(letter_player) == 1 and letter_player.isalpha():
+                        if letter_player in used_letters:
+                            print("You've already used this letter.")
+                        else:
+                            used_letters.append(letter_player)
                         break
                     else:
                         print("Invalid input. Please enter a single letter.")
@@ -125,9 +131,15 @@ while True:
             while not GAME_OVER:
                 print('Secret Word: ' + ''.join(BOARD))
                 print(f"{atual_player}'s turn.")
+                print("Used Letters:", ', '.join(used_letters))
 
         # request letter to player
                 letter_player = input("Type one letter: \n").upper()
+
+                if letter_player in used_letters:
+                    print("You've already used this letter.")
+                else:
+                    used_letters.append(letter_player)
 
         # Checking Letter and spaces
                 HAS_LETTER = False
