@@ -3,9 +3,29 @@ https://elisabetebilini.github.io/hangman-game/
 '''
 import random
 import re
+import gspread
 from art import body_pieces, hang
 from words import word_list_easy, word_list_intermediate, word_list_hard
+from google.oauth2.service_account import Credentials
 
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_PLAYER = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_PLAYER.open('Hangman--game-project')
+
+easy = SHEET.worksheet('easy')
+
+data = easy.get_all_values()
+
+print(data)
+
+'''
 print(hang)
 
 
@@ -176,3 +196,4 @@ while True:
     else:
         print("Invalid choice. Please select a valid option.")
 
+'''
