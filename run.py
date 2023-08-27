@@ -36,6 +36,7 @@ def display_scores():
         print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
 
 
+print('Welcome to')
 print(hang)
 
 
@@ -85,7 +86,7 @@ while True:
         for letter in range(len(select_word)):
             BOARD += BLANKS
 
-        choice = input("\nChoose the game mode: 1 Single Player or 2 Two Players. \n")
+        choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")
 
         print("Number of letters in the secret word: ", len(select_word))
 
