@@ -3,9 +3,9 @@ https://elisabetebilini.github.io/hangman-game/
 '''
 import random
 import re
-import gspread
 from art import body_pieces, hang
 from words import word_list_easy, word_list_intermediate, word_list_hard
+import gspread
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -24,7 +24,6 @@ def update_scores(player_name, score, difficulty):
     worksheet = SHEET.worksheet("Scores")
     data = [player_name, score, difficulty]
     worksheet.append_row(data)
-    print("Score updated successfully!")  # test
 
 
 def display_scores():
