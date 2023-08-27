@@ -19,13 +19,24 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_PLAYER = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_PLAYER.open('Hangman--game-project')
 
-easy = SHEET.worksheet('easy')
 
-data = easy.get_all_values()
+def update_scores(player_name, score, difficulty):
+    worksheet = SHEET.worksheet("Scores")
+    data = [player_name, score, difficulty]
+    worksheet.append_row(data)
+    print("Score updated successfully!")  # test
 
-print(data)
 
-'''
+def display_scores():
+    worksheet = SHEET.worksheet("Scores")
+    scores = worksheet.get_all_values()
+    print("\nPlayer Scores:")
+    print("Player Name | Score | Difficulty")
+    print("-" * 30)
+    for row in scores[1:]:
+        print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
+
+
 print(hang)
 
 
@@ -51,6 +62,9 @@ while True:
  
     if choice == '1':
         display_instructions()
+        input("\nPress 0 to return to the main menu.")
+    elif choice == '2':
+        display_scores()
         input("\nPress 0 to return to the main menu.")
     elif choice == '3':
         while difficulty not in ('1', '2', '3'):
@@ -131,6 +145,7 @@ while True:
                 if BLANKS not in BOARD:
                     GAME_OVER = True
                     print("Congratulation, you survive!")
+                    update_scores(player, CHANCES, difficulty)
         else:
             while True:
                 player_01 = input("Player 1, enter your name: \n").upper()
@@ -184,6 +199,7 @@ while True:
                     GAME_OVER = True
                     print("Congratulation, you survive!")
                     print(f'{atual_player} won the game.')
+                    update_scores(atual_player, CHANCES, difficulty)
                 if atual_player == player_01:
                     atual_player = player_02
                 else:
@@ -195,5 +211,3 @@ while True:
         break
     else:
         print("Invalid choice. Please select a valid option.")
-
-'''
