@@ -41,7 +41,7 @@ print(hang)
 
 
 def display_instructions():
-    print("\n-------------------Instructions for Hangman:-------------------\n")
+    print("\n----------------Instructions for Hangman:-----------------\n")
     print("→ The player can choose the difficulty level of the words.")
     print("→ The player(s) have a total of 7 chances to discover the word.")
     print("→ The player must provide a name with at least 3 letters.")
@@ -68,7 +68,8 @@ while True:
         input("\nPress 0 to return to the main menu.")
     elif choice == '3':
         while difficulty not in ('1', '2', '3'):
-            difficulty = input("Choose the difficulty level: \n1 - Easy\n2 - Intermediate\n3 - Hard\n")
+            difficulty = input(
+                "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")
 
         if difficulty == '1':
             select_word = random.choice(word_list_easy).upper()
