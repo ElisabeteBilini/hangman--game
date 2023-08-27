@@ -11,7 +11,7 @@ word_list_intermediate = [
     'doorbell',
     'geography',
     'avocato',
-    'kangoroo'
+    'kangoroo',
     'preferential',
     'raspberry',
     'strawberry',

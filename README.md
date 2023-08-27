@@ -59,25 +59,49 @@
 <h3>Game Start</h3>
 <ul>
 <li>Simple and visible logo to greet the player and start the game.</li>
-<li>The game starts asking which option to play, alone or with another player.</li>
+<li>Menu with options to interact with the player.</li>
 </ul>
 
 ![index](images/Initial.png)
 
-<h3>Letter Capture</h3>
+
+<h3>Instructions</h3>
 <ul>
-<li>Captures the letters entered by the player(s), if the letter is correct it goes to its correct space in the word order, if the letter is wrong the body starts to be inserted into the gallows.</li>
-<li>If the game is between two players, after each move is taken in turns players.</li>
+<li>Game instructions are presented to the player.</li>
 </ul>
+
+![index](images/instructions.png)
+
+
+<h3>Player Scores</h3>
+<ul>
+<li>Score presented to the player, containing name, score and game difficulty level.</li>
+</ul>
+
+![index](images/scores.png)
+
+<h3>Start Game</h3>
+<ul>
+<li>The game starts asking the difficulty level of the game.</li>
+<li>After is asked if the player plays alone or with another player simultaneously.</li>
+<li>The player's name is asked (minimum of 3 letters, symbols, numbers and blanks are not allowed).</li>
+<li>Game starts by asking the player to type a letter</li>
+<li>Captures the letters typed by the player(s), if the letter is correct it goes to its correct space in the word order, if the letter is wrong the body starts to be inserted in the gallows, if the letter has already been typed a message is sent to the player.</li>
+<li>Final message with a funny sentence for either end (win or lose).</li>
+</ul>
+
+![index](images/game.png)
 
 ![index](images/letter.png)
 
-<h3>Final Message</h3>
+![index](images/Final.png)
+
+<h3>Quit</h3>
 <ul>
-<li>Final message with a funny sentence for either end (win or lose)</li>
+<li>Thank you message appears on the screen.</li>
 </ul>
 
-![index](images/Final.png)
+![index](images/quit.png)
 
 <h2>Technologies Used</h2>
 <h3>Languages Used</h3>
@@ -165,11 +189,6 @@
 | Samsung Galaxy A12          |  Works as expected |
 <br>
 
-<h3>Improvements to be Implemented</h3>
-<ul>
-<li>Insert Intermediate and Advanced Levels Sections</li>
-</ul>
-
 <h3>Known Bugs</h3>
 <ul>
 <li>I had some problems implementing the Google Spread spreadsheet. Found 
@@ -184,7 +203,7 @@ The solution talking to support, and I realized that my requirements.txt were em
 <h4></h4>
 <ol>
 <li>In the GitHub body of my page, click the menu button: repository;</li>
-<li>Locate the portfolio01 project and click;</li>
+<li>Locate the Hangman--game project and click;</li>
 <li>Click on the button: settings;</li>
 <li>Click on the button: pages;</li>
 <li>Click on the button: visit the site.</li>
@@ -215,10 +234,6 @@ The solution talking to support, and I realized that my requirements.txt were em
 <li>Code reference.</li>
 </ul>
 </li>
-<li>Readme initial artwork </li> 
-<ul>
-<li>Designed and thought of by the developer of this project.</li>
-</ul>
 <li><a href = "https://textkool.com/" target = "_blank" rel="noopener">Text Kool</a>
 <ul>
 <li>ASCII text art generator</li>
@@ -238,6 +253,10 @@ MJ Codes
 <li>Code reference</li>
 </ul>
 </li>
+<li>Readme initial artwork </li> 
+<ul>
+<li>Designed and thought of by the developer of this project.</li>
+</ul>
 </ul>
 
 <h3>Content</h3>
