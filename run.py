@@ -31,7 +31,7 @@ def display_scores():
     worksheet = SHEET.worksheet("Scores")
     scores = worksheet.get_all_values()
     print("\nPlayer Scores:")
-    print("Player Name | Score | Difficulty")
+    print("\nPlayer Name | Score | Difficulty")
     print("-" * 30)
     for row in scores[1:]:
         print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
@@ -200,11 +200,13 @@ while True:
                     print("Congratulation, you survive!")
                     print(f'{atual_player} won the game.')
                     update_scores(atual_player, CHANCES, difficulty)
-                if atual_player == player_01:
-                    atual_player = player_02
-                else:
-                    atual_player = player_01
-                print(body_pieces[CHANCES])
+
+                if not GAME_OVER:
+                    if atual_player == player_01:
+                        atual_player = player_02
+                    else:
+                        atual_player = player_01
+                    print(body_pieces[CHANCES])
 
     elif choice == '4':
         print("Thank you for playing Hangman!")
