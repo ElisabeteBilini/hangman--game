@@ -38,7 +38,7 @@
 
 <h3>Flow Chart</h3>
 
-![Flowchart](images/flow%20chart.jpg)
+![Flowchart](images/flowchart%20hangman.jpg)
 
 <h2>Features</h2>
 
@@ -76,9 +76,12 @@
 <h3>Player Scores</h3>
 <ul>
 <li>Score presented to the player, containing name, score and game difficulty level.</li>
+<li>Use of google spreadsheet for external storage of data.</li>
 </ul>
 
 ![index](images/scores.png)
+
+![index](images/Excel.png)
 
 <h3>Start Game</h3>
 <ul>
@@ -193,8 +196,11 @@
 <ul>
 <li>I had some problems implementing the Google Spread spreadsheet. Found 
 The solution talking to support, and I realized that my requirements.txt were empty, I did the add, commit and push procedure, and it worked.</li>
-<li></li>
+<li>User input validation errors were hindering the player in having a good gaming experience, this error was fixed using re.match method syntax.</li>
+<li>In my terminal (problems) appeared several errors related to long lines and imports not installed, after the installation of gspread google-auth the problems were solved.</li>
 </ul>
+
+![index](images/error%20long%20line.png)
 
 <h2>Deployment</h2>
 <h3>GitHub</h3>
