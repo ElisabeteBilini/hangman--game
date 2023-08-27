@@ -83,6 +83,9 @@
 <h3>Languages Used</h3>
 <ul>
  <li>Python</li>
+ <ul>
+ <li> Programming language used for this project.</li>
+ </ul>
 </ul>
 
 <h3>Frameworks, Libraries & Programs Used</h3>
@@ -114,7 +117,14 @@
 <li>To detect coding issues.</li>
 </ul>
 </li>
+<li> <a href="https://www.google.com/sheets/about/" target="_blank" rel=”noopener”>Gspread (Googleshhets)</a>
+<ul>
+<li>Used to store and link captured score data to the game</li>
+</ul>
+</li>
 </ol>
+
+
 
 <h2>Testing</h2>
 <h3>Testing User Stories from User Experience (UX) Section</h3>
@@ -162,7 +172,9 @@
 
 <h3>Known Bugs</h3>
 <ul>
-<li>No bugs known</li>
+<li>I had some problems implementing the Google Spread spreadsheet. Found 
+The solution talking to support, and I realized that my requirements.txt were empty, I did the add, commit and push procedure, and it worked.</li>
+<li></li>
 </ul>
 
 <h2>Deployment</h2>
@@ -195,7 +207,7 @@
 <ul>
 <li> <a href="https://codeinstitute.net/ie/" target="_blank" rel=”noopener”>Code Institute</a>
 <ul>
-<li>README references.</li>
+<li>README references and scope of project references.</li>
 </ul>
 </li>
 <li> <a href="https://stackoverflow.com/" target="_blank" rel=”noopener”>Stack Overflow</a>
