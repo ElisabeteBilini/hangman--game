@@ -106,6 +106,8 @@ while True:
                 while True:
                     letter_player = input("Type one letter: \n").upper()
                     if len(letter_player) == 1 and letter_player.isalpha():
+                        if re.match(r'^[A-Z]{3,}$', letter_player):
+                            break
                         if letter_player in used_letters:
                             print("You've already used this letter.")
                         else:
@@ -170,7 +172,8 @@ while True:
 
         # request letter to player
                 letter_player = input("Type one letter: \n").upper()
-
+                if re.match(r'^[A-Z]{3,}$', letter_player):
+                    break
                 if letter_player in used_letters:
                     print("You've already used this letter.")
                 else:
@@ -206,6 +209,7 @@ while True:
                         atual_player = player_02
                     else:
                         atual_player = player_01
+                    print(f"CHANCES: {CHANCES}")
                     print(body_pieces[CHANCES])
 
     elif choice == '4':
