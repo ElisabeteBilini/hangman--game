@@ -36,6 +36,17 @@ def display_scores():
         print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
 
 
+def validate_player_name():
+    while True:
+        player_name = input("Player, enter your name (or 'q' to quit): \n").upper()
+        if player_name == 'Q':
+            return None
+    if re.match(r'^[A-Z]{3,}$', player_name):
+        return player_name
+    else:
+        print("Invalid name. Please enter a name with containing only letters.")
+
+
 print('Welcome to')
 print(hang)
 
@@ -62,10 +73,10 @@ while True:
  
     if choice == '1':
         display_instructions()
-        input("\nPress 0 to return to the main menu.")
+        input("\nPress Enter to return to the main menu.")
     elif choice == '2':
         display_scores()
-        input("\nPress 0 to return to the main menu.")
+        input("\nPress Enter to return to the main menu.")
     elif choice == '3':
         while difficulty not in ('1', '2', '3'):
             difficulty = input(
@@ -94,10 +105,7 @@ while True:
         if choice == '1':
             while True:
                 player = input("Player, enter your name: \n").upper()
-                if re.match(r'^[A-Z]{3,}$', player):
-                    break
-                else:
-                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
+                player = validate_player_name()
 
         # identifying player
             while not GAME_OVER:
@@ -150,16 +158,10 @@ while True:
         else:
             while True:
                 player_01 = input("Player 1, enter your name: \n").upper()
-                if re.match(r'^[A-Z]{3,}$', player_01):
-                    break
-                else:
-                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
+                player_01 = validate_player_name()
             while True:
                 player_02 = input("Player 2, enter your name: \n").upper()
-                if re.match(r'^[A-Z]{3,}$', player_02):
-                    break
-                else:
-                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
+                player_02 = validate_player_name()
 
             atual_player = player_01
 
