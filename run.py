@@ -136,6 +136,8 @@ while True:
 
                 if not HAS_LETTER:
                     CHANCES -= 1
+                    if CHANCES < 0:
+                        CHANCES = 0
                     print(body_pieces[CHANCES])
 
                     if CHANCES == 0:
@@ -148,6 +150,7 @@ while True:
                 if BLANKS not in BOARD:
                     GAME_OVER = True
                     print("Congratulation, you survive!")
+                    print(f'{atual_player} won the game.')
                     print(f'The secret word was: {select_word}.')
                     update_scores(player, CHANCES, difficulty)
         else:
@@ -191,13 +194,14 @@ while True:
 
                 if not HAS_LETTER:
                     CHANCES -= 1
-                    print(body_pieces[CHANCES])
-                    
+                    if CHANCES < 0:
+                        CHANCES = 0
                     if CHANCES == 0:
                         GAME_OVER = True
                         print("Beware, words can also kill!")
                         print(f'{atual_player} lost the game.')
                         print(f'The secret word was: {select_word}.')
+                        print(body_pieces[CHANCES])  # alterado
                         break
 
                 if BLANKS not in BOARD:
@@ -212,8 +216,8 @@ while True:
                         atual_player = player_02
                     else:
                         atual_player = player_01
-                    print(f"CHANCES: {CHANCES}")
-                    print(body_pieces[CHANCES])
+                    if 0 < CHANCES < len(body_pieces):
+                        print(body_pieces[CHANCES])
 
     elif choice == '4':
         while True:
