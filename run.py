@@ -35,6 +35,7 @@ def display_scores():
     for row in scores[1:]:
         print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
 
+
 print('Welcome to')
 print(hang)
 
@@ -97,7 +98,7 @@ while True:
                     break
                 else:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
-
+                
         # identifying player
             while not GAME_OVER:
                 print('Secret Word: ' + ''.join(BOARD))
@@ -147,6 +148,7 @@ while True:
                 if BLANKS not in BOARD:
                     GAME_OVER = True
                     print("Congratulation, you survive!")
+                    print(f'The secret word was: {select_word}.')
                     update_scores(player, CHANCES, difficulty)
         else:
             while True:
@@ -202,6 +204,7 @@ while True:
                     GAME_OVER = True
                     print("Congratulation, you survive!")
                     print(f'{atual_player} won the game.')
+                    print(f'The secret word was: {select_word}.')
                     update_scores(atual_player, CHANCES, difficulty)
 
                 if not GAME_OVER:
@@ -213,7 +216,17 @@ while True:
                     print(body_pieces[CHANCES])
 
     elif choice == '4':
-        print("Thank you for playing Hangman!")
-        break
+        while True:
+            confirm_exit = input("Are you sure you want to quit? (y/n): ")
+            if confirm_exit.lower() == 'y':
+                print("Thank you for playing Hangman!")
+                break
+            elif confirm_exit.lower() == 'n':
+                break
+            else:
+                print("Invalid input. Please enter 'y' to quit or 'n' to cancel.")
+
+        if confirm_exit.lower() == 'y':
+            break
     else:
-        print("Invalid choice. Please select a valid option.")
+        input("\nPress Enter to return to the main menu.")
