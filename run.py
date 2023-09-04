@@ -57,9 +57,9 @@ while True:
     print("2 - Player Scores")
     print("3 - Start Game")
     print("4 - Quit")
-    
+
     choice = input("Enter your choice: ")
- 
+
     if choice == '1':
         display_instructions()
         input("\nPress Enter to return to the main menu.")
@@ -69,7 +69,7 @@ while True:
     elif choice == '3':
         while difficulty not in ('1', '2', '3'):
             difficulty = input(
-                "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")
+                "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")  # noqa
 
         if difficulty == '1':
             select_word = random.choice(word_list_easy).upper()
@@ -87,7 +87,7 @@ while True:
         for letter in range(len(select_word)):
             BOARD += BLANKS
 
-        choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")
+        choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")  # noqa
 
         print("Number of letters in the secret word: ", len(select_word))
 
@@ -97,9 +97,9 @@ while True:
                 if re.match(r'^[A-Z]{3,}$', player):
                     break
                 else:
-                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
-                
-        # identifying player
+                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
+
+            # identifying player
             while not GAME_OVER:
                 print('Secret Word: ' + ''.join(BOARD))
                 print("Used Letters:", ', '.join(used_letters))
@@ -125,8 +125,8 @@ while True:
                             print(f'{player}, you lost the game.')
                             print(f'The secret word was: {select_word}.')
                             break
-                        
-        # Checking Letter and spaces
+
+                # Checking Letter and spaces
                 HAS_LETTER = False
                 for letter_position in range(len(select_word)):
                     letter = select_word[letter_position]
@@ -146,7 +146,7 @@ while True:
                         print(f'{player}, you lost the game.')
                         print(f'The secret word was: {select_word}.')
                         break
-                    
+
                 if BLANKS not in BOARD:
                     GAME_OVER = True
                     print("Congratulation, you survive!")
@@ -159,13 +159,13 @@ while True:
                 if re.match(r'^[A-Z]{3,}$', player_01):
                     break
                 else:
-                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
+                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
             while True:
                 player_02 = input("Player 2, enter your name: \n").upper()
                 if re.match(r'^[A-Z]{3,}$', player_02):
                     break
                 else:
-                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")
+                    print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
 
             atual_player = player_01
 
@@ -228,7 +228,7 @@ while True:
             elif confirm_exit.lower() == 'n':
                 break
             else:
-                print("Invalid input. Please enter 'y' to quit or 'n' to cancel.")
+                print("Invalid input. Please enter 'y' to quit or 'n' to cancel.")  # noqa
 
         if confirm_exit.lower() == 'y':
             break

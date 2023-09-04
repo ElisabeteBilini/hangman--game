@@ -167,11 +167,14 @@
 
 | Feature tested | Expected result                                    | Current results | Approved disapproved |
 | :---           |     :---:                                          |      :---:      |                 ---: |
+ Interaction with the main menu  |   Collection of options entered by the user                          |   as expected   | To spend  
 | Capturing user's handwriting  |   Collecting handwriting entered by the user                          |   as expected   | To spend             |
+| Choice of players and level |   Captures the user's choice between 1 or 2 players and the difficulty level of the match.                          |   as expected   | To spend             |
 | Captured correct letter    |  Entered letter in the correct space in the word order        |   as expected   | To spend             |
 | Captured wrong letter           |   Part of hangman body inserted with symbols |   as expected   | To spend             |
 | Letter entry allowed until the word is completed or the entire body hangs| Show completed word or whole body hanging   |   as expected   | To spend             |
 | Final message|  Congratulates user, informs you if you won or lost with a funny message|   as expected   | To spend             |
+| Game exit function|  Requests confirmation for exit and displays message|   as expected   | To spend             |
 <br>
 
 <h3>Browser Test</h3>
@@ -183,21 +186,13 @@
 | Firefox         |  Works as expected |
 
 <br>
-<h3>Device Test</h3>
-
-| Browser Tested              | Work Status        |
-| ----------------------------|--------------------|
-| Huawei Y5                   |  Works as expected |
-| Honor Lit 20                |  Works as expected |
-| Samsung Galaxy A12          |  Works as expected |
-<br>
 
 <h3>Known Bugs</h3>
 <ul>
 <li>I had some problems implementing the Google Spread spreadsheet. Found 
 The solution talking to support, and I realized that my requirements.txt were empty, I did the add, commit and push procedure, and it worked.</li>
 <li>User input validation errors were hindering the player in having a good gaming experience, this error was fixed using re.match method syntax.</li>
-<li>In my terminal (problems) appeared several errors related to long lines and imports not installed, after the installation of gspread google-auth the problems were solved.</li>
+<li>In my terminal (problems) appeared several errors related to long lines and imports not installed, after the re-installation of gspread google-auth the problems were solved.</li>
 </ul>
 
 ![index](images/error%20long%20line.png)
@@ -238,6 +233,7 @@ The solution talking to support, and I realized that my requirements.txt were em
 <li> <a href="https://stackoverflow.com/" target="_blank" rel=”noopener”>Stack Overflow</a>
 <ul>
 <li>Code reference.</li>
+<li>Use of #noqa.</li>
 </ul>
 </li>
 <li><a href = "https://textkool.com/" target = "_blank" rel="noopener">Text Kool</a>
