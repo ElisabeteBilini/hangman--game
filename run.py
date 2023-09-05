@@ -56,7 +56,7 @@ while True:
     print("\n1 - Instructions")
     print("2 - Player Scores")
     print("3 - Start Game")
-    print("4 - Quit")
+    print("4 - Quit\n")
 
     choice = input("Enter your choice: ")
 
@@ -67,9 +67,14 @@ while True:
         display_scores()
         input("\nPress Enter to return to the main menu.")
     elif choice == '3':
-        while difficulty not in ('1', '2', '3'):
+        # while difficulty not in ('1', '2', '3'):
+        while True:
             difficulty = input(
                 "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")  # noqa
+            if difficulty in ('1', '2', '3'):
+                break
+            else:
+                print("Invalid option. Please choose 1, 2, or 3.")
 
         if difficulty == '1':
             select_word = random.choice(word_list_easy).upper()
