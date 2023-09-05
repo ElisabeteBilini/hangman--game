@@ -34,6 +34,9 @@ def display_scores():
     print("-" * 30)
     for row in scores[1:]:
         print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
+    
+    while input("\nPress Enter to return to the main menu.") != "":
+        pass
 
 
 print('Welcome to')
@@ -48,6 +51,9 @@ def display_instructions():
     print("→ The number of letters in the word drawn is displayed.")
     print("→ At the end of the game, the secret word is revealed.")
 
+    while input("\nPress Enter to return to the main menu.") != "":
+        pass
+
 
 select_word = ""
 difficulty = ""
@@ -58,14 +64,18 @@ while True:
     print("3 - Start Game")
     print("4 - Quit\n")
 
-    choice = input("Enter your choice: ")
+    while True:
+        choice = input("Enter your choice: ")
+
+        if choice.isdigit() and 1 <= int(choice) <= 4:
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 4.")
 
     if choice == '1':
         display_instructions()
-        input("\nPress Enter to return to the main menu.")
     elif choice == '2':
         display_scores()
-        input("\nPress Enter to return to the main menu.")
     elif choice == '3':
         # while difficulty not in ('1', '2', '3'):
         while True:
