@@ -232,8 +232,8 @@ The solution talking to support, and I realized that my requirements.txt were em
 </li>
 <li> <a href="https://stackoverflow.com/" target="_blank" rel=”noopener”>Stack Overflow</a>
 <ul>
-<li>Code reference.</li>
 <li>Use of #noqa.</li>
+<li>Line of code: scores.sort(key=lambda x: int(x[1]), reverse=True)</li>
 </ul>
 </li>
 <li><a href = "https://textkool.com/" target = "_blank" rel="noopener">Text Kool</a>

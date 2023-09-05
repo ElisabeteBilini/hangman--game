@@ -3,7 +3,7 @@ https://elisabetebilini.github.io/hangman-game/
 '''
 import random
 import re
-from art import body_pieces, hang
+from art import body_pieces, hang, positive
 from words import word_list_easy, word_list_intermediate, word_list_hard
 import gspread
 from google.oauth2.service_account import Credentials
@@ -28,13 +28,14 @@ def update_scores(player_name, score, difficulty):
 
 def display_scores():
     worksheet = SHEET.worksheet("Scores")
-    scores = worksheet.get_all_values()
+    scores = worksheet.get_all_values()[1:]
+    scores.sort(key=lambda x: int(x[1]), reverse=True)
     print("\nPlayer Scores:")
     print("\nPlayer Name | Score | Difficulty")
     print("-" * 30)
-    for row in scores[1:]:
+    for row in scores:
         print(f"{row[0]:<11} | {row[1]:<5} | {row[2]:<10}")
-    
+
     while input("\nPress Enter to return to the main menu.") != "":
         pass
 
@@ -77,7 +78,6 @@ while True:
     elif choice == '2':
         display_scores()
     elif choice == '3':
-        # while difficulty not in ('1', '2', '3'):
         while True:
             difficulty = input(
                 "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")  # noqa
@@ -113,6 +113,8 @@ while True:
                     break
                 else:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
+            
+            atual_player = player
 
             # identifying player
             while not GAME_OVER:
@@ -238,7 +240,9 @@ while True:
         while True:
             confirm_exit = input("Are you sure you want to quit? (y/n): ")
             if confirm_exit.lower() == 'y':
-                print("Thank you for playing Hangman!")
+                print("\nThank you for playing Hangman!")
+                print(positive)
+                print("\n")
                 break
             elif confirm_exit.lower() == 'n':
                 break
