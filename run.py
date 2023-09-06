@@ -192,14 +192,25 @@ while True:
                 print(f"{atual_player}'s turn.")
                 print("Used Letters:", ', '.join(used_letters))
 
-        # request letter to player
-                letter_player = input("Type one letter: \n").upper()
-                if re.match(r'^[A-Z]{3,}$', letter_player):
-                    break
-                if letter_player in used_letters:
-                    print("You've already used this letter.")
-                else:
-                    used_letters.append(letter_player)
+                while True:
+                    letter_player = input("Type one letter: \n").upper()
+                    if len(letter_player) == 1 and letter_player.isalpha():
+                        if letter_player in used_letters:
+                            print("You've already used this letter.")
+                        else:
+                            used_letters.append(letter_player)
+                            break
+                    else:
+                        print("Invalid input. Please enter a single letter.")
+                        CHANCES -= 1
+                        print(body_pieces[CHANCES])
+
+                        if CHANCES == 0:
+                            GAME_OVER = True
+                            print("Beware, words can also kill!")
+                            print(f'{atual_player} lost the game.')
+                            print(f'The secret word was: {select_word}.')
+                            break
 
         # Checking Letter and spaces
                 HAS_LETTER = False
