@@ -58,6 +58,9 @@ def display_instructions():
 
 select_word = ""
 difficulty = ""
+player_01 = ""
+player_02 = ""
+
 
 while True:
     print("\n1 - Instructions")
@@ -79,46 +82,44 @@ while True:
         display_scores()
     elif choice == '3':
         while True:
-            difficulty = input(
-                "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")  # noqa
-            if difficulty == '1' or difficulty == '2' or difficulty == '3':
-                break
-            else:
-                print("Invalid option. Please choose 1, 2, or 3.")
-
-        if difficulty == '1':
-            select_word = random.choice(word_list_easy).upper()
-        elif difficulty == '2':
-            select_word = random.choice(word_list_intermediate).upper()
-        else:
-            select_word = random.choice(word_list_hard).upper()
-
-        BOARD = []
-        BLANKS = '_'
-        CHANCES = 7
-        GAME_OVER = False
-        used_letters = []
-
-        for letter in range(len(select_word)):
-            BOARD += BLANKS
-
-        while True:
-            choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")  # noqa
+            choice = input("Choose the game mode:\n1 - Single Player\n2 - Two Players\n")  # noqa
             if choice == '1' or choice == '2':
                 break
             else:
                 print("Invalid choice. Please enter '1' for Single Player or '2' for Two Players.")  # noqa
 
-        print("Number of letters in the secret word: ", len(select_word))
-
         if choice == '1':
+            while True:
+                difficulty = input("Choose the difficulty level:\n1 - Easy\n2 - Intermediate\n3 - Hard\n")  # noqa
+                if difficulty == '1' or difficulty == '2' or difficulty == '3':
+                    break
+                else:
+                    print("Invalid option. Please choose 1, 2, or 3.")
+
+            if difficulty == '1':
+                select_word = random.choice(word_list_easy).upper()
+            elif difficulty == '2':
+                select_word = random.choice(word_list_intermediate).upper()
+            else:
+                select_word = random.choice(word_list_hard).upper()
+
+            BOARD = []
+            BLANKS = '_'
+            CHANCES = 7
+            GAME_OVER = False
+            used_letters = []
+
+            for letter in range(len(select_word)):
+                BOARD += BLANKS
+
+            # get player's name
             while True:
                 player = input("Player, enter your name: \n").upper()
                 if re.match(r'^[A-Z]{3,}$', player):
                     break
                 else:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
-            
+
             atual_player = player
 
             # identifying player
@@ -171,17 +172,43 @@ while True:
 
                 if BLANKS not in BOARD:
                     GAME_OVER = True
-                    print("Congratulation, you survive!")
+                    print("Congratulations, you survived!")
                     print(f'{atual_player} won the game.')
                     print(f'The secret word was: {select_word}.')
                     update_scores(player, CHANCES, difficulty)
-        else:
+
+        elif choice == '2':
+            while True:
+                difficulty = input("Choose the difficulty level:\n1 - Easy\n2 - Intermediate\n3 - Hard\n")  # noqa
+                if difficulty == '1' or difficulty == '2' or difficulty == '3':
+                    break
+                else:
+                    print("Invalid option. Please choose 1, 2, or 3.")
+
+            if difficulty == '1':
+                select_word = random.choice(word_list_easy).upper()
+            elif difficulty == '2':
+                select_word = random.choice(word_list_intermediate).upper()
+            else:
+                select_word = random.choice(word_list_hard).upper()
+
+            BOARD = []
+            BLANKS = '_'
+            CHANCES = 7
+            GAME_OVER = False
+            used_letters = []
+
+            # Initialize the game
+            for letter in range(len(select_word)):
+                BOARD += BLANKS
+
             while True:
                 player_01 = input("Player 1, enter your name: \n").upper()
                 if re.match(r'^[A-Z]{3,}$', player_01):
                     break
                 else:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
+
             while True:
                 player_02 = input("Player 2, enter your name: \n").upper()
                 if re.match(r'^[A-Z]{3,}$', player_02):
@@ -191,7 +218,6 @@ while True:
 
             atual_player = player_01
 
-        # identifying player
             while not GAME_OVER:
                 print('Secret Word: ' + ''.join(BOARD))
                 print(f"{atual_player}'s turn.")
@@ -217,7 +243,7 @@ while True:
                             print(f'The secret word was: {select_word}.')
                             break
 
-        # Checking Letter and spaces
+                # Checking letter and spaces
                 HAS_LETTER = False
                 for letter_position in range(len(select_word)):
                     letter = select_word[letter_position]
@@ -234,12 +260,12 @@ while True:
                         print("Beware, words can also kill!")
                         print(f'{atual_player} lost the game.')
                         print(f'The secret word was: {select_word}.')
-                        print(body_pieces[CHANCES])  # alterado
+                        print(body_pieces[CHANCES])
                         break
 
                 if BLANKS not in BOARD:
                     GAME_OVER = True
-                    print("Congratulation, you survive!")
+                    print("Congratulations, you survived!")
                     print(f'{atual_player} won the game.')
                     print(f'The secret word was: {select_word}.')
                     update_scores(atual_player, CHANCES, difficulty)
