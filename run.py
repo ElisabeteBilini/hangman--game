@@ -120,6 +120,8 @@ while True:
                 else:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
 
+            print("Number of letters in the secret word: ", len(select_word))
+            
             atual_player = player
 
             # identifying player
@@ -215,6 +217,8 @@ while True:
                     break
                 else:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
+
+            print("Number of letters in the secret word: ", len(select_word))
 
             atual_player = player_01
 
