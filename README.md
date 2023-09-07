@@ -85,19 +85,23 @@
 
 <h3>Start Game</h3>
 <ul>
-<li>The game starts asking the difficulty level of the game.</li>
-<li>After is asked if the player plays alone or with another player simultaneously.</li>
+<li>The game starts asking the player plays alone or with another player simultaneously.</li>
+<li>After is asked if the game starts asking the difficulty level of the game.</li>
 <li>The player's name is asked (minimum of 3 letters, symbols, numbers and blanks are not allowed).</li>
 <li>Game starts by asking the player to type a letter</li>
 <li>Captures the letters typed by the player(s), if the letter is correct it goes to its correct space in the word order, if the letter is wrong the body starts to be inserted in the gallows, if the letter has already been typed a message is sent to the player.</li>
 <li>Final message with a funny sentence for either end (win or lose).</li>
 </ul>
 
+![index](images/players.png)
+
 ![index](images/game.png)
 
 ![index](images/letter.png)
 
 ![index](images/Final.png)
+
+![index](images/congrats.png)
 
 <h3>Quit</h3>
 <ul>
