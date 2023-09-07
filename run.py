@@ -81,7 +81,7 @@ while True:
         while True:
             difficulty = input(
                 "Choose the difficulty level: \n1- Easy\n2- Intermediate\n3- Hard\n")  # noqa
-            if difficulty in ('1', '2', '3'):
+            if difficulty == '1' or difficulty == '2' or difficulty == '3':
                 break
             else:
                 print("Invalid option. Please choose 1, 2, or 3.")
@@ -102,7 +102,12 @@ while True:
         for letter in range(len(select_word)):
             BOARD += BLANKS
 
-        choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")  # noqa
+        while True:
+            choice = input("Choose the game mode: 1 Single Player or 2 Two Players. \n")  # noqa
+            if choice == '1' or choice == '2':
+                break
+            else:
+                print("Invalid choice. Please enter '1' for Single Player or '2' for Two Players.")  # noqa
 
         print("Number of letters in the secret word: ", len(select_word))
 
