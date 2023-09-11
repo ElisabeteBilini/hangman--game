@@ -19,6 +19,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_PLAYER = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_PLAYER.open('Hangman--game-project')
 
+game_difficulty = ""
+
 
 def update_scores(player_name, score, difficulty):
     worksheet = SHEET.worksheet("Scores")
@@ -46,6 +48,7 @@ print(hang)
 
 def display_instructions():
     print("\n----------------Instructions for Hangman:-----------------\n")
+    print("→ The player can play alone or against another player.")
     print("→ The player can choose the difficulty level of the words.")
     print("→ The player(s) have a total of 7 chances to discover the word.")
     print("→ The player must provide a name with at least 3 letters.")
@@ -57,7 +60,6 @@ def display_instructions():
 
 
 select_word = ""
-difficulty = ""
 player_01 = ""
 player_02 = ""
 
@@ -90,15 +92,15 @@ while True:
 
         if choice == '1':
             while True:
-                difficulty = input("Choose the difficulty level:\n1 - Easy\n2 - Intermediate\n3 - Hard\n")  # noqa
-                if difficulty == '1' or difficulty == '2' or difficulty == '3':
+                game_difficulty = input("Choose the difficulty level:\n1 - Easy\n2 - Intermediate\n3 - Hard\n")  # noqa
+                if game_difficulty == '1' or game_difficulty == '2' or game_difficulty == '3':  # noqa
                     break
                 else:
                     print("Invalid option. Please choose 1, 2, or 3.")
 
-            if difficulty == '1':
+            if game_difficulty == '1':
                 select_word = random.choice(word_list_easy).upper()
-            elif difficulty == '2':
+            elif game_difficulty == '2':
                 select_word = random.choice(word_list_intermediate).upper()
             else:
                 select_word = random.choice(word_list_hard).upper()
@@ -121,7 +123,7 @@ while True:
                     print("Invalid name. Please enter a name with at least 3 letters and containing only letters.")  # noqa
 
             print("Number of letters in the secret word: ", len(select_word))
-            
+
             atual_player = player
 
             # identifying player
@@ -177,19 +179,19 @@ while True:
                     print("Congratulations, you survived!")
                     print(f'{atual_player} won the game.')
                     print(f'The secret word was: {select_word}.')
-                    update_scores(player, CHANCES, difficulty)
+                    update_scores(player, CHANCES, game_difficulty)
 
         elif choice == '2':
             while True:
-                difficulty = input("Choose the difficulty level:\n1 - Easy\n2 - Intermediate\n3 - Hard\n")  # noqa
-                if difficulty == '1' or difficulty == '2' or difficulty == '3':
+                game_difficulty = input("Choose the difficulty level:\n1 - Easy\n2 - Intermediate\n3 - Hard\n")  # noqa
+                if game_difficulty == '1' or game_difficulty == '2' or game_difficulty == '3':  # noqa
                     break
                 else:
                     print("Invalid option. Please choose 1, 2, or 3.")
 
-            if difficulty == '1':
+            if game_difficulty == '1':
                 select_word = random.choice(word_list_easy).upper()
-            elif difficulty == '2':
+            elif game_difficulty == '2':
                 select_word = random.choice(word_list_intermediate).upper()
             else:
                 select_word = random.choice(word_list_hard).upper()
@@ -272,7 +274,7 @@ while True:
                     print("Congratulations, you survived!")
                     print(f'{atual_player} won the game.')
                     print(f'The secret word was: {select_word}.')
-                    update_scores(atual_player, CHANCES, difficulty)
+                    update_scores(atual_player, CHANCES, game_difficulty)
 
                 if not GAME_OVER:
                     if atual_player == player_01:
