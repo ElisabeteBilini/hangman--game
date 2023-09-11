@@ -288,7 +288,7 @@ while True:
         while True:
             confirm_exit = input("Are you sure you want to quit? (y/n): ")
             if confirm_exit.lower() == 'y':
-                print("\nThank you for playing Hangman!")
+                print("\nThanks for playing Hangman!")
                 print(positive)
                 print("\n")
                 break
