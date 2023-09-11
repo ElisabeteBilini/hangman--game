@@ -50,7 +50,7 @@ def display_instructions():
     print("\n----------------Instructions for Hangman:-----------------\n")
     print("→ The player can play alone or against another player.")
     print("→ The player can choose the difficulty level of the words.")
-    print("→ The player(s) have a total of 7 chances to discover the word.")
+    print("→ The player(s) have 7 chances to discover the word.")
     print("→ The player must provide a name with at least 3 letters.")
     print("→ The number of letters in the word drawn is displayed.")
     print("→ At the end of the game, the secret word is revealed.")
