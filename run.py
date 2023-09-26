@@ -152,8 +152,6 @@ while True:
                         print("Please enter a letter.")
                         continue
                     if len(letter_player) == 1 and letter_player.isalpha():
-                        if re.match(r'^[A-Z]{3,}$', letter_player):
-                            break
                         if letter_player in used_letters:
                             print("You've already used this letter.")
                         else:
@@ -161,8 +159,6 @@ while True:
                         break
                     else:
                         print("Invalid input. Please enter a single letter.")
-                        CHANCES -= 1
-                        print(body_pieces[CHANCES])
 
                         if CHANCES == 0:
                             GAME_OVER = True
@@ -267,8 +263,6 @@ while True:
                             break
                     else:
                         print("Invalid input. Please enter a single letter.")
-                        CHANCES -= 1
-                        print(body_pieces[CHANCES])
 
                         if CHANCES == 0:
                             GAME_OVER = True
