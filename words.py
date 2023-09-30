@@ -26,10 +26,23 @@ word_list_intermediate = [
     'street',
     'python',
     'school',
+    'bicycle'
+    'keyboard',
+    'elephant',
+    'library',
+    'chocolate',
+    'butterfly',
+    'adventure',
+    'umbrella',
+    'computer',
+    'telescope'
+
 ]
 
 word_list_hard = [
     'throughout', 'complimentary', 'otherwise', 'although', 'faithfully',
     'inwards', 'entrepreneur', 'nonplussed', 'irregardless', 'xenophobia',
-    'disinterested', 'enormity', 'obsequious', 'subtle', 'debris'
+    'disinterested', 'enormity', 'obsequious', 'subtle', 'debris',
+    'labyrinthine', 'serendipity', 'cacophony', 'exacerbate', 'ubiquitous',
+    'epiphany', 'zeppelin', 'quixotic', 'obfuscate', 'perseverance'
 ]

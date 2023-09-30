@@ -193,14 +193,14 @@
 
 <h3>Known Bugs</h3>
 <ul>
-<li>I had some problems implementing the Google Spread spreadsheet. Found 
-The solution talking to support, and I realized that my requirements.txt were empty, I did the add, commit and push procedure, and it worked.</li>
 <li>User input validation errors were hindering the player in having a good gaming experience, this error was fixed using re.match method syntax.</li>
 <li>In my terminal (problems) appeared several errors related to long lines and imports not installed, after the re-installation of gspread google-auth the problems were solved.</li>
-</ul>
 
 ![index](images/error%20long%20line.png)
+<li>The message duplication error occurred in both cases (single or dual player) when the last entry was invalid data. The problem was resolved by removing the last check, as it was automatically validated first if the input was correct, and if it wasn't and it was the last chance it would generate the game over message and the second check would check if there were more chances, otherwise, it would create a message. Therefore, removing the second check, if the entry was invalid and it was the last chance, the game over message was printed only once.</li>
 
+![index](images/error%20double%20-%20%20final%20message.png)
+</ul>
 <h2>Deployment</h2>
 <h3>GitHub</h3>
 
